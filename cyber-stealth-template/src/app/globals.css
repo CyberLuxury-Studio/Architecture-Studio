@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0e0e10;
+  --color-surface: #111116;
+  --color-surface-container-low: #131315;
+  --color-surface-container: #19191c;
+  --color-surface-container-high: #1f1f22;
+  --color-surface-container-highest: #262528;
+  --color-surface-container-lowest: #000000;
+
+  --color-primary: #96f8ff;
+  --color-primary-container: #00f1fd;
+  --color-primary-fixed: #00f1fd;
+  --color-on-primary: #005f64;
+  --color-on-primary-container: #00565a;
+  --color-on-primary-fixed: #004145;
+
+  --color-secondary: #ff7073;
+  --color-secondary-container: #bf002a;
+
+  --color-tertiary: #d674ff;
+  --color-tertiary-container: #be0dff;
+
+  --color-on-background: #f9f5f8;
+  --color-on-surface: #f9f5f8;
+  --color-on-surface-variant: #adaaad;
+
+  --color-outline: #767577;
+  --color-outline-variant: #48474a;
+
+  --font-headline: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-label: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  html, body {
+    @apply bg-background text-on-background overflow-x-hidden;
+  }
+}
+
+/* Custom Utilities for Neon Glows & Patterns */
+@layer utilities {
+  .bg-grid-pattern {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
+}
