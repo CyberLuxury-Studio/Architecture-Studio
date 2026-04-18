@@ -1,4 +1,6 @@
+
 "use client";
+import { CyberButton } from "@/components/ui/CyberButton";
 
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
@@ -39,9 +41,9 @@ export function PricingSection() {
                 </li>
               ))}
             </ul>
-            <button className="w-full bg-transparent border border-white/20 text-on-surface font-[family-name:var(--font-jetbrains-mono)] text-sm uppercase py-3 rounded-sm hover:bg-white/5 transition-colors">
+            <CyberButton variant="ghost" className="w-full text-sm">
               INIT_BASIC
-            </button>
+            </CyberButton>
           </motion.div>
 
           {/* Tier 2 (Highlighted) */}
@@ -70,9 +72,9 @@ export function PricingSection() {
                   </li>
                 ))}
               </ul>
-              <button className="w-full bg-primary-container text-on-primary font-[family-name:var(--font-jetbrains-mono)] font-bold text-sm uppercase py-3 rounded-sm shadow-[0_0_20px_rgba(0,243,255,0.2)] hover:bg-primary-fixed transition-colors">
+              <CyberButton variant="primary" className="w-full text-sm">
                 UPGRADE_LINK
-              </button>
+              </CyberButton>
             </div>
           </motion.div>
 
@@ -93,9 +95,9 @@ export function PricingSection() {
                 </li>
               ))}
             </ul>
-            <button className="w-full bg-transparent border border-white/20 text-on-surface font-[family-name:var(--font-jetbrains-mono)] text-sm uppercase py-3 rounded-sm hover:bg-white/5 transition-colors">
+            <CyberButton variant="ghost" className="w-full text-sm">
               REQ_ACCESS
-            </button>
+            </CyberButton>
           </motion.div>
 
         </motion.div>

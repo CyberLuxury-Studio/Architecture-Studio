@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { CheckCircle, AlertTriangle } from "lucide-react";
+import { CyberButton } from "./CyberButton";
 
 export function WaitlistInput() {
   const [email, setEmail] = useState("");
@@ -31,15 +32,16 @@ export function WaitlistInput() {
 
       setStatus("success");
       setEmail("");
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const errorMsg = err instanceof Error ? err.message : "System failure.";
       setStatus("error");
-      setErrorMessage(err.message);
+      setErrorMessage(errorMsg);
     }
   };
 
   if (status === "success") {
     return (
-      <div className="flex items-center gap-3 w-full p-4 border border-primary/40 bg-primary/10 rounded-sm text-primary font-label text-sm uppercase shadow-[0_0_15px_rgba(0,243,255,0.2)]">
+      <div className="flex items-center gap-3 w-full p-4 border border-primary/40 bg-primary/10 rounded-sm text-primary font-[family-name:var(--font-jetbrains-mono)] text-sm uppercase shadow-[0_0_15px_rgba(0,243,255,0.2)]">
         <CheckCircle className="w-5 h-5 shrink-0" />
         Access Granted. Awaiting Protocol.
       </div>
@@ -69,17 +71,17 @@ export function WaitlistInput() {
             className="w-full bg-transparent border-none text-on-surface font-[family-name:var(--font-jetbrains-mono)] placeholder:text-on-surface-variant/50 focus:ring-0 px-0 outline-none"
           />
         </div>
-        <button
-          type="submit"
+        <CyberButton
+          variant="primary"
           disabled={status === "loading"}
-          className={`relative z-10 w-full md:w-auto ${status === 'error' ? 'bg-error text-on-error hover:bg-error-container' : 'bg-primary text-on-primary-fixed hover:bg-primary-container'} font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-widest font-bold py-3 md:py-0 h-12 px-8 rounded-sm transition-colors flex-shrink-0 flex items-center justify-center disabled:opacity-50`}
+          className={`w-full md:w-auto h-12 ${status === 'error' ? '!bg-error !text-on-error hover:!bg-error-container' : ''}`}
         >
           {status === "loading" ? "UPLOADING..." : "EXECUTE"}
-        </button>
+        </CyberButton>
       </form>
       {status === "error" && (
         <div className="mt-3 flex items-center gap-2 text-[10px] font-[family-name:var(--font-jetbrains-mono)] text-error uppercase tracking-widest">
-          <AlertTriangle className="w-3 h-3" />
+          <AlertTriangle className="w-3 h-3 shrink-0" />
           <span>{errorMessage}</span>
         </div>
       )}

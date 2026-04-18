@@ -2,21 +2,21 @@
 
 import { motion } from "framer-motion";
 import { fadeUpVariant, staggerContainer } from "@/lib/motion";
-import { Cpu, ShieldAlert, Network } from "lucide-react";
+import { CyberCpuIcon, CyberNetworkIcon, CyberShieldIcon } from "@/components/ui/Icons";
 
 const features = [
   {
-    icon: <Cpu className="w-6 h-6 text-primary" />,
+    icon: <CyberCpuIcon className="w-6 h-6 text-primary" />,
     title: "Neural Uplink",
     description: "Direct cognitive integration with the mainframe. Millisecond response times engineered for biological synchronization."
   },
   {
-    icon: <Network className="w-6 h-6 text-primary" />,
+    icon: <CyberNetworkIcon className="w-6 h-6 text-primary" />,
     title: "Zero-Latency Core",
     description: "Distributed edge network ensuring sub-10ms ping globally. The physical distance between thought and execution eliminated."
   },
   {
-    icon: <ShieldAlert className="w-6 h-6 text-primary" />,
+    icon: <CyberShieldIcon className="w-6 h-6 text-primary" />,
     title: "Encrypted Protocols",
     description: "Multi-layered polymorphic encryption. Data packets shift signatures dynamically to evade algorithmic detection."
   }
@@ -39,7 +39,8 @@ export function FeaturesSection() {
               variants={fadeUpVariant}
               className="bg-surface p-8 rounded border border-white/5 hover:border-primary/50 transition-colors duration-300 group flex flex-col h-full hover:shadow-[0_0_30px_rgba(0,243,255,0.05)]"
             >
-              <div className="w-12 h-12 bg-surface-container-low rounded flex items-center justify-center mb-8 border border-white/5 group-hover:border-primary/30 transition-colors">
+              <div className="w-12 h-12 bg-surface-container-low rounded flex items-center justify-center mb-8 border border-white/5 group-hover:border-primary/30 transition-colors relative overflow-hidden">
+                <div className="absolute inset-0 bg-primary/10 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
                 {feature.icon}
               </div>
               <h3 className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold text-on-surface mb-4">

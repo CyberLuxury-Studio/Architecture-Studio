@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={clsx(
+        className={clsx("scanlines",
           spaceGrotesk.variable,
           inter.variable,
           jetbrainsMono.variable,

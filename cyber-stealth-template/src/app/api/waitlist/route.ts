@@ -21,7 +21,7 @@ export async function POST(request: Request) {
       { message: 'Node registered successfully.' },
       { status: 200 }
     );
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: 'Internal system failure.' },
       { status: 500 }
