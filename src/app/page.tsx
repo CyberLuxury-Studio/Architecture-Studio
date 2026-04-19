@@ -4,6 +4,10 @@ import { FeaturesSection } from "@/components/sections/FeaturesSection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { Footer } from "@/components/sections/Footer";
+import { FAQSection } from "@/components/sections/FAQSection";
+import { CTASection } from "@/components/sections/CTASection";
+
+
 
 export default function Home() {
   return (
@@ -21,6 +25,8 @@ export default function Home() {
       <div id="terminal">
         <CtaSection />
       </div>
+      <FAQSection />
+      <CTASection />
       <Footer />
     </main>
   );
