@@ -2,6 +2,7 @@ import { Navbar } from "@/components/shared/Navbar";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { FeaturesSection } from "@/components/sections/FeaturesSection";
 import { PricingSection } from "@/components/sections/PricingSection";
+import { PortfolioGallerySection } from "@/components/sections/PortfolioGallerySection";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { Footer } from "@/components/sections/Footer";
 
@@ -14,6 +15,9 @@ export default function Home() {
       </div>
       <div id="features">
         <FeaturesSection />
+      </div>
+      <div id="portfolio">
+        <PortfolioGallerySection />
       </div>
       <div id="tiers">
         <PricingSection />
